@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Components/Navbar'
 const Hero = () => {
   return (
-    <div className='flex gap-20' >
+    <div className='gap-20 hidden  ' >
       
       <div>Home</div>
       <div>categories</div>
