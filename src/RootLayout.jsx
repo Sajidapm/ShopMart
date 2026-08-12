@@ -6,9 +6,9 @@ import Footer from './Components/Footer'
 import MobileFooter from './Components/MobileFooter';
 const RootLayout = () => {
   return (
-    <div className='container max-w-6xl mx-auto px-2 '>
+    <div className='md:mx-10 px-2  mt-3'>
       
-    <div >
+    
      <Navbar></Navbar>
      <Outlet/>
      <div className='md:hidden '>
@@ -16,7 +16,7 @@ const RootLayout = () => {
      </div>
      <Footer></Footer>
     </div>
-    </div>
+    
   )
 }
 
