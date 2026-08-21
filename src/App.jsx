@@ -10,6 +10,7 @@ import Productlist from "./Productlist";
 import Categoriespage from './Categoriespage'
 import WishlistPage from './WishlistPage'
 import SearchPage from './SearchPage'
+import Product from './Components/Product'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         />  
         <Route path='SearchPage' element={<SearchPage/>}/>
         <Route path="Productlist" element={<Productlist />} />      </Route>
+        <Route path="/Product/:id" element={<Product />} />
     </Routes>
   )
 }
