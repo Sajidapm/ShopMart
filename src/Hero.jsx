@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div>
       <NavLink to="/Productlist" >
-      <img src='public/Hero.png' className='md:h-125 w-full'></img></NavLink>
+      <img src='/Hero.png' className='md:h-125 w-full'></img></NavLink>
     </div>
   )
 }
