@@ -6,11 +6,11 @@ import Footer from './Components/Footer'
 import MobileFooter from './Components/MobileFooter';
 const RootLayout = () => {
   return (
-    <div className='md:mx-10 px-2  mt-3'>
+    <div className=' md:mx-10'>
       
     
      <Navbar></Navbar>
-     <Outlet/>
+     <Outlet />
      <div className='md:hidden '>
       <MobileFooter></MobileFooter>
      </div>

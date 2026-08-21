@@ -1,28 +1,28 @@
 import React from 'react'
-import {NavLink as mobfooterNavLink} from 'react-router-dom'
+import {NavLink } from 'react-router-dom'
 import { Search, ShoppingCart ,ClipboardList, UserRound} from "lucide-react";
 import { House } from 'lucide-react'
 import { Heart} from 'lucide-react'
 const MobileFooter = () => {
   return (
     <div>
-      <footer className='fixed bottom-0 left-0 right-0 z-50 bg-white  md:hidden mx-10'>
+      <footer className='fixed bottom-0 left-0 right-0 z-50 bg-white  md:hidden mx-2'>
       <div className='flex justify-between  '>
-        <mobfooterNavLink to="/Hero"><div > <House size={24} className='text-blue-600' />
-            <div>Home</div></div></mobfooterNavLink>
+        <NavLink to="/Hero"><div > <House size={24} className='text-blue-600' />
+            <div>Home</div></div></NavLink>
 
-        <mobfooterNavLink to="/wishlist"><div > <Heart size={24} className='' />
-           <div>Wishlist</div></div></mobfooterNavLink>
+        <NavLink to="/wishlistPage"><div > <Heart size={24} className='' />
+           <div>Wishlist</div></div></NavLink>
 
-        <mobfooterNavLink to="/Cart"><div className='relative'> <ShoppingCart size={24} className='' />
+        <NavLink to="/Cart"><div className='relative'> <ShoppingCart size={24} className='' />
            <div>Cart</div><div className='absolute bottom-10 left-5 text-xs w-5 h-5 
-             rounded-full bg-blue-700 text-center '></div> </div></mobfooterNavLink>
+             rounded-full bg-red-700 text-center '></div> </div></NavLink>
 
-        <mobfooterNavLink to="/Orders"><div className='flex flex-col items-center'>
-            <ClipboardList size={24} /><div>Orders</div></div></mobfooterNavLink>
+        <NavLink to="/Orders"><div className='flex flex-col items-center'>
+            <ClipboardList size={24} /><div>Orders</div></div></NavLink>
 
-        <mobfooterNavLink to="/Account"><div className='flex flex-col items-center'> 
-             <UserRound /><div>Account</div></div></mobfooterNavLink>
+        <NavLink to="/Account"><div className='flex flex-col items-center'> 
+             <UserRound /><div>Account</div></div></NavLink>
       </div>
       </footer>
     </div>

@@ -1,17 +1,12 @@
 import React from 'react'
-import Navbar from './Components/Navbar'
+import Productlist from './Productlist'
+import { NavLink } from 'react-router-dom'
+
 const Hero = () => {
   return (
-    <div className='gap-20 hidden  ' >
-      
-      <div>Home</div>
-      <div>categories</div>
-      <div>Deals</div>
-      <div>Compaire</div>
-      <div>Wishlist</div>
-      <div>Orders</div>
-      <div>Help</div>
-      <footer></footer>
+    <div>
+      <NavLink to="/Productlist" >
+      <img src='public\ChatGPT Image Aug 14, 2026, 03_58_20 PM.png' className='md:h-125 w-full'></img></NavLink>
     </div>
   )
 }
