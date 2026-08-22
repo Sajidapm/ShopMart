@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import { WishlistContext } from "../Context/WishlistContext";
 import { CartContext } from "../Context/CartContext";
+import { CompareContext } from "../Context/CompareContext";
 
 const Product = ({ product }) => {
   const [liked, setLiked] = useState(false);
@@ -12,7 +13,13 @@ const Product = ({ product }) => {
 
   const { cart, toggleCart } = useContext(CartContext);
 
+  const { compare, toggleCompare } = useContext(CompareContext);
+
   const isInCart = cart.some((item) => item.id === product.id);
+
+  const isInCompare = compare.some(
+    (item) => item.id === product.id
+  );
 
   const toggleButton = () => {
     setLiked(!liked);
@@ -57,39 +64,55 @@ const Product = ({ product }) => {
         </div>
 
         {/* Cart Button */}
-<div className="flex">
-        {isInCart ? (
-          <NavLink
-            to="/Cart"
-            className="block w-full mt-4 bg-green-600
-            text-white py-2 rounded-l-lg hover:bg-green-700"
-          >
-            Go to Cart
-          </NavLink>
-        ) : (
-          <button
-            onClick={() => toggleCart(product)}
-            className="w-full mt-4 bg-blue-600 text-white
-            py-2 rounded-lg hover:bg-blue-700"
-          >
-            Add to Cart
-          </button>
-        )}
-                {isInCart &&
-          <button
-            onClick={() => toggleCart(product)}
-            className="w-full mt-4 bg-blue-600 text-white
-            py-2 rounded-r-lg hover:bg-blue-700"
-          >
-            Remove
-          </button>
-            }
-</div>
+        <div className="flex">
 
+          {isInCart ? (
+            <NavLink
+              to="/Cart"
+              className="block w-full mt-4 bg-green-600
+              text-white py-2 rounded-l-lg hover:bg-green-700"
+            >
+              Go to Cart
+            </NavLink>
+          ) : (
+            <button
+              onClick={() => toggleCart(product)}
+              className="w-full mt-4 bg-blue-600 text-white
+              py-2 rounded-lg hover:bg-blue-700"
+            >
+              Add to Cart
+            </button>
+          )}
+
+          {isInCart && (
+            <button
+              onClick={() => toggleCart(product)}
+              className="w-full mt-4 bg-blue-600 text-white
+              py-2 rounded-r-lg hover:bg-blue-700"
+            >
+              Remove
+            </button>
+          )}
+
+        </div>
+
+        {/* Compare Button */}
+<button
+  onClick={() => {
+    console.log("Compare clicked:", product);
+    toggleCompare(product);
+  }}
+  className={`w-full mt-2 py-2 rounded-lg ${
+    isInCompare
+      ? "bg-purple-600 text-white hover:bg-purple-700"
+      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+  }`}
+>
+  {isInCompare ? "Remove Compare" : "Compare"}
+</button>
       </div>
 
       {/* Wishlist Button */}
-
       <button
         className="absolute top-2 right-2"
         onClick={toggleButton}

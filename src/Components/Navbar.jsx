@@ -36,7 +36,7 @@ const linkStyle = ({ isActive }) =>
       {/*Nav menu............... */}
       <div className='flex gap-5 '>
         <NavLink to="/WishlistPage" className={linkStyle} >WishList</NavLink>
-        <NavLink to="/Compaire" className={linkStyle} >Compaire</NavLink>
+        <NavLink to="/Compare" className={linkStyle} >Compare</NavLink>
    <NavLink to="/Cart">
   <div className="relative flex items-center">
     <ShoppingCart size={24} />
@@ -97,13 +97,16 @@ const linkStyle = ({ isActive }) =>
     </div>
      </div>
       {/*Mobile screen search bar.... */}
-      <div className='md:hidden border border-gray-300 rounded-lg w-full
-       focus-within:border-blue-700 Bg-pin md:w-80 lg:w-96 xl:w-[500px]  flex '>
-        <div className='h-full bg-blue-200 rounded-l-lg p-2 '>
-           <Search size={22} strokeWidth={2} ></Search><SearchBar/></div>
-          
-      </div>
-      <div className='flex gap-2 px-2 border-y-2 border-gray-200'>
+    <div className="md:hidden border border-gray-300 rounded-lg w-full
+  focus-within:border-blue-700 flex items-center">
+
+  
+
+  <div className="flex-1">
+    <SearchBar />
+  </div>
+
+</div>  <div className='flex gap-2 px-2 border-y-2 border-gray-200'>
         
                     <NavLink
                       to="/Categoriespage/beauty"

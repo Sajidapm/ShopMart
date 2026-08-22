@@ -4,19 +4,21 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
-import ProductContextComponent from "./Context/ProductContext";
+import ProductContextProvider from "./Context/ProductContext";
 import WishlistProvider from "./Context/WishlistContext";
 import CartProvider from "./Context/CartContext";
-import ProductContextProvider from "./Context/ProductContext";
+import CompareProvider from "./Context/CompareContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <CartProvider>
-  <ProductContextProvider>
-    <WishlistProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </WishlistProvider>
-  </ProductContextProvider>
-  </CartProvider>
+  <CompareProvider>
+    <CartProvider>
+      <ProductContextProvider>
+        <WishlistProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </WishlistProvider>
+      </ProductContextProvider>
+    </CartProvider>
+  </CompareProvider>
 );
