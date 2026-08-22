@@ -102,7 +102,7 @@ const linkStyle = ({ isActive }) =>
 
   
 
-  <div className="flex-1">
+  <div className="flex-1 w-full">
     <SearchBar />
   </div>
 
