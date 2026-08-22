@@ -26,9 +26,9 @@ const App = () => {
           element={<Categoriespage />}
         />  
         <Route path='SearchPage' element={<SearchPage/>}/>
-        <Route path="Productlist" element={<Productlist />} />      </Route>
-        <Route path="/Product/:id" element={<Product />} />
-    </Routes>
+        <Route path="Productlist" element={<Productlist />} />
+        <Route path="Product/:id" element={<Product />} />      </Route>
+ </Routes>
   )
 }
 

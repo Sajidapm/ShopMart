@@ -11,7 +11,7 @@ const Wishlist = () => {
       <div className="w-full md:w-80 h-lvh  border border-gray-200 rounded-lg p-5">
         <aside>
           <div className=" items-center  gap-3">
-            <div className="border rounded-full bg-blue-300 w-12 h-12 flex items-center justify-center">
+            <div className="border rounded-full bg-blue-300 w-12  flex items-center justify-center">
             s
             </div>
 
