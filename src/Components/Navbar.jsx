@@ -24,7 +24,7 @@ const linkStyle = ({ isActive }) =>
   return (
     <>  
     {/*Navbar in tab and Largr screen..................................... */}
-    <nav  className='fixed top-0 left-0 w-full z-[100] bg-white shadow-[0_3px_4px_-3px_rgba(0,0,0,0.3)]' >
+    <nav  className='fixed top-0 left-0 w-full z-[9999] bg-white shadow-[0_3px_4px_-3px_rgba(0,0,0,0.3)]' >
       <div className='hidden md:flex justify-between no-underline border-b border-black p-2' >
       {/*Logo............ */}
       <div className='flex items-center relative '> <span className='text-3xl font-bold'>Shop</span>
@@ -78,7 +78,7 @@ const linkStyle = ({ isActive }) =>
     </nav> 
 
    {/* Navbar in Mobile...............................................*/}
-    <nav className='md:hidden pb-3 my-7 relative mx-1 mr-3'>
+    <nav className='fixed top-0 left-0 w-full z-[9999] bg-white md:hidden pb-3 my-7 relative mx-1 mr-3'>
       {/*Align Logo and Menu... */}
       <div className='flex  justify-between'>
       {/*logo....... */}
