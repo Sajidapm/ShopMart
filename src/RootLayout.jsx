@@ -8,8 +8,12 @@ const RootLayout = () => {
   return (
     <>
       <div className="md:mx-10">
-        <Navbar />
+ <div className="fixed top-0 left-0 w-full z-[9999]">
+         <Navbar />
+        </div>
+        <main className='pt-20'>
         <Outlet />
+        </main>
         <Footer />
       </div>
 
