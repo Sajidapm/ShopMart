@@ -6,18 +6,14 @@ import Footer from './Components/Footer'
 import MobileFooter from './Components/MobileFooter';
 const RootLayout = () => {
   return (
-    <div className=' md:mx-10'>
-      
-    
-     <Navbar></Navbar>
-     <Outlet />
-     <div className='md:hidden '>
-      <MobileFooter></MobileFooter>
-     </div>
-     <Footer></Footer>
-    </div>
-    
-  )
-}
+    <>
+      <div className="md:mx-10">
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </div>
 
-export default RootLayout
+      <MobileFooter />
+    </>
+  );
+};
