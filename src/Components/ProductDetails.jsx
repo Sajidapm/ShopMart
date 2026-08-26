@@ -106,7 +106,7 @@ const ProductDetails = () => {
                 <NavLink
                   to="/Cart"
                   className="block w-full mt-4 bg-green-600
-                  text-white py-2 rounded-l-lg
+                  text-white py-2 rounded-lg
                   text-center hover:bg-green-700"
                 >
                   Go to Cart
@@ -126,10 +126,10 @@ const ProductDetails = () => {
                 <button
                   onClick={() => toggleCart(product)}
                   className="w-full mt-4 bg-red-600
-                  text-white py-2 rounded-r-lg
+                  text-white py-2 rounded-lg
                   hover:bg-red-700"
                 >
-                  Remove
+                Bye Now
                 </button>
               )}
 

@@ -78,7 +78,7 @@ const linkStyle = ({ isActive }) =>
     </nav> 
 
    {/* Navbar in Mobile...............................................*/}
-    <nav className='fixed top-0 left-0 w-full z-[9999] bg-white md:hidden pb-3 my-7 relative mx-1 mr-3'>
+    <nav className=' md:hidden pb-3 my-7 relative mx-1 mr-3 fixed top-0 left-0 w-full z-[9999] bg-white'>
       {/*Align Logo and Menu... */}
       <div className='flex  justify-between'>
       {/*logo....... */}
