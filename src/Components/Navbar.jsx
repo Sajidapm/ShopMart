@@ -13,7 +13,6 @@ import { Search,House ,
 import Categories from './Categories';
 import MobileMenu from './MobilMenu';
 import SearchBar from './SearchBar';
-import MobileFooter from './MobileFooter';
 
 const Navbar = () => {
 const { cart } = useContext(CartContext);
@@ -79,7 +78,7 @@ const linkStyle = ({ isActive }) =>
     </nav> 
 
    {/* Navbar in Mobile...............................................*/}
-    <nav className='md:hidden pb-3 my-7 relative mx-1 mr-3'>
+    <nav className='md:hidden pb-3  relative mx-1 mr-3'>
       {/*Align Logo and Menu... */}
       <div className='flex  justify-between'>
       {/*logo....... */}
@@ -156,10 +155,7 @@ const linkStyle = ({ isActive }) =>
         
       </div>
     </nav>
-    <div className='md:hidden '>
-      <MobileFooter></MobileFooter>
-     </div>
-     
+    
     </>
     )
 }
