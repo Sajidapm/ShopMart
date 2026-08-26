@@ -78,16 +78,16 @@ const linkStyle = ({ isActive }) =>
     </nav> 
 
    {/* Navbar in Mobile...............................................*/}
-    <nav className='md:hidden pb-3 my-8 relative mx-8'>
+    <nav className='md:hidden pb-3 my-7 relative mx-1 mr-3'>
       {/*Align Logo and Menu... */}
-      <div className='flex justify-between'>
+      <div className='flex  justify-between'>
       {/*logo....... */}
         <div className='flex pl-10'> 
         <h1 className='text-2xl font-bold'>Shop</h1>
         <span className='text-2xl text-blue-700 font-bold'>Smart</span>
         </div>
       {/*Nav menu ..... */}
-       <div className='flex gap-2'>
+       <div className='flex  gap-2'>
          <NavLink to="/WishlistPage">❤ </NavLink>
          <NavLink to="/Account">Account</NavLink>
    <NavLink to="/Cart">
@@ -102,12 +102,13 @@ const linkStyle = ({ isActive }) =>
 
  
        </div>
-     <div className='absolute top-0 left-2' >   
+       {/*Hamburger menu in mobile screen ................. */}
+     <div className='absolute top-0 ' >   
     <MobileMenu/>
     </div>
      </div>
       {/*Mobile screen search bar.... */}
-    <div className="md:hidden border border-gray-300 rounded-lg w-full
+    <div className="md:hidden  border border-gray-300 rounded-lg w-full my-3
   focus-within:border-blue-700 flex items-center">
 
   
@@ -116,7 +117,7 @@ const linkStyle = ({ isActive }) =>
     <SearchBar />
   </div>
 
-</div>  <div className='flex gap-2 px-2 border-y-2 border-gray-200'>
+</div>  <div className='flex justify-between px-2 border-y-2 border-gray-200'>
         
                     <NavLink
                       to="/Categoriespage/beauty"
