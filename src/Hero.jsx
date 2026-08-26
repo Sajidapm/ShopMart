@@ -10,14 +10,14 @@ const Hero = () => {
       {/* Hero Image */}
       <NavLink to="/Productlist">
         <img
-          src="/Hero.png"
-          className="md:h-125 w-full"
-          alt="Hero"
+          src="public/Hero.png"
+          className="md:h-125 w-full "
+          alt="Hero" 
         />
       </NavLink>
 
       {/* Small Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-8 lg:grid-cols-8 gap-5 px-4 mt-5">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-8 lg:grid-cols-8 gap-5 px-4 mt-5  mb-24">
         {products.map((item) => (
           <NavLink
             to={`/ProductDetails/${item.id}`}

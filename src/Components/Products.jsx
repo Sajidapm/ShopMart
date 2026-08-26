@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
 import { ProductContext } from "../Context/ProductContext";
 import Product from "./Product";
 
 const Products = () => {
   const products = useContext(ProductContext);
+  
 
   return (
     <div>

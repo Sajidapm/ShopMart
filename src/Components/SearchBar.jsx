@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { ProductContext } from "../Context/ProductContext";
 import { Search } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
   const [showMenu, setShowMenu] = useState(false);
+  
 
   const products = useContext(ProductContext);
 

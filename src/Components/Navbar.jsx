@@ -78,7 +78,7 @@ const linkStyle = ({ isActive }) =>
     </nav> 
 
    {/* Navbar in Mobile...............................................*/}
-    <nav className='md:hidden pb-3 relative mx-4'>
+    <nav className='md:hidden pb-3 my-8 relative mx-8'>
       {/*Align Logo and Menu... */}
       <div className='flex justify-between'>
       {/*logo....... */}
@@ -86,7 +86,7 @@ const linkStyle = ({ isActive }) =>
         <h1 className='text-2xl font-bold'>Shop</h1>
         <span className='text-2xl text-blue-700 font-bold'>Smart</span>
         </div>
-      {/*Nav menu..... */}
+      {/*Nav menu ..... */}
        <div className='flex gap-2'>
          <NavLink to="/WishlistPage">❤ </NavLink>
          <NavLink to="/Account">Account</NavLink>

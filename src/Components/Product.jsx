@@ -1,31 +1,22 @@
 import React, { useContext, useState } from "react";
 import { Heart } from "lucide-react";
 import { NavLink } from "react-router-dom";
-
 import { WishlistContext } from "../Context/WishlistContext";
 import { CartContext } from "../Context/CartContext";
 import { CompareContext } from "../Context/CompareContext";
-
 const Product = ({ product }) => {
   const [liked, setLiked] = useState(false);
-
   const { toggleWishlist } = useContext(WishlistContext);
-
   const { cart, toggleCart } = useContext(CartContext);
-
   const { compare, toggleCompare } = useContext(CompareContext);
-
   const isInCart = cart.some((item) => item.id === product.id);
-
   const isInCompare = compare.some(
     (item) => item.id === product.id
   );
-
   const toggleButton = () => {
     setLiked(!liked);
     toggleWishlist(product);
   };
-
   return (
     <div
       className="bg-white rounded-2xl shadow-md hover:shadow-xl
@@ -56,21 +47,17 @@ const Product = ({ product }) => {
           <span className="text-lg font-bold text-blue-600">
             ${product.price}
           </span>
-
           <span className="text-yellow-500">
             ⭐ {product.rating}
           </span>
-
         </div>
-
         {/* Cart Button */}
         <div className="flex">
-
           {isInCart ? (
             <NavLink
               to="/Cart"
               className="block w-full mt-4 bg-green-600
-              text-white py-2 rounded-l-lg hover:bg-green-700"
+              text-white py-2 rounded-lg mx-2 hover:bg-green-700"
             >
               Go to Cart
             </NavLink>
@@ -86,11 +73,11 @@ const Product = ({ product }) => {
 
           {isInCart && (
             <button
-              onClick={() => toggleCart(product)}
+              onClick={() => (product)}
               className="w-full mt-4 bg-blue-600 text-white
-              py-2 rounded-r-lg hover:bg-blue-700"
+              py-2 rounded-lg mx-2 hover:bg-blue-700"
             >
-              Remove
+             Bye Now 
             </button>
           )}
 
