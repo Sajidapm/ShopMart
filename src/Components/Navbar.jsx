@@ -13,6 +13,7 @@ import { Search,House ,
 import Categories from './Categories';
 import MobileMenu from './MobilMenu';
 import SearchBar from './SearchBar';
+import MobileFooter from './MobileFooter';
 
 const Navbar = () => {
 const { cart } = useContext(CartContext);
@@ -155,6 +156,10 @@ const linkStyle = ({ isActive }) =>
         
       </div>
     </nav>
+    <div className='md:hidden '>
+      <MobileFooter></MobileFooter>
+     </div>
+     
     </>
     )
 }

@@ -11,9 +11,6 @@ const RootLayout = () => {
     
      <Navbar></Navbar>
      <Outlet />
-     <div className='md:hidden '>
-      <MobileFooter></MobileFooter>
-     </div>
      <Footer></Footer>
     </div>
     
