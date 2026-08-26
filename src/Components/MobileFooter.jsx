@@ -10,7 +10,7 @@ const MobileFooter = () => {
   
   return (
     <div>
-      <footer className='fixed bottom-0 left-0 right-0 z-[9999] bg-white  md:hidden mx-2 pb-8'>
+      <footer className='fixed bottom-0 left-0 right-0 z-[9999] bg-white  md:hidden mx-2 '>
       <div className='flex justify-between  '>
         <NavLink to="/Hero"><div > <House size={24} className='text-blue-600' />
             <div>Home</div></div></NavLink>
