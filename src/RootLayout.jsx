@@ -16,4 +16,4 @@ const RootLayout = () => {
       <MobileFooter />
     </>
   );
-};
+};export default RootLayout
