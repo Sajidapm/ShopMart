@@ -78,9 +78,9 @@ const linkStyle = ({ isActive }) =>
     </nav> 
 
    {/* Navbar in Mobile...............................................*/}
-    <nav className=' md:hidden pb-3 my-7 relative mx-1 mr-3 fixed top-0 left-0 w-full z-[9999] bg-white'>
+    <nav className=' md:hidden pb-3 py-7 fixed top-0 left-0 w-full z-[9999]  bg-white '>
       {/*Align Logo and Menu... */}
-      <div className='flex  justify-between'>
+      <div className='flex   mr-5 justify-between'>
       {/*logo....... */}
         <div className='flex pl-10'> 
         <h1 className='text-2xl font-bold'>Shop</h1>
@@ -90,7 +90,7 @@ const linkStyle = ({ isActive }) =>
        <div className='flex  gap-2'>
          <NavLink to="/WishlistPage">❤ </NavLink>
          <NavLink to="/Account">Login</NavLink>
-   <NavLink to="/Cart">
+         <NavLink to="/Cart">
       <div className="relative flex items-center ">
       <ShoppingCart size={24} />
       <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-red-700
@@ -103,7 +103,7 @@ const linkStyle = ({ isActive }) =>
  
        </div>
        {/*Hamburger menu in mobile screen ................. */}
-     <div className='absolute top-0 ' >   
+     <div className='absolute top-7 ' >   
     <MobileMenu/>
     </div>
      </div>
