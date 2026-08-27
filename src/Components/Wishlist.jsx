@@ -2,17 +2,17 @@ import React, { useContext } from "react";
 import { WishlistContext } from "../Context/WishlistContext";
 
 const Wishlist = () => {
-  const { wishlist } = useContext(WishlistContext);
+  const { wishlist, toggleWishlist } = useContext(WishlistContext);
 
   return (
     <div className="flex flex-col md:flex-row gap-6 p-5">
 
       {/* Sidebar */}
-      <div className="w-full md:w-80 h-lvh  border border-gray-200 rounded-lg p-5">
+      <div className="w-full md:w-80 h-lvh border border-gray-200 rounded-lg p-5">
         <aside>
-          <div className=" items-center  gap-3">
-            <div className="border rounded-full bg-blue-300 w-12  flex items-center justify-center">
-            s
+          <div className="items-center gap-3">
+            <div className="border rounded-full bg-blue-300 w-12 flex items-center justify-center">
+              s
             </div>
 
             <div>
@@ -56,7 +56,10 @@ const Wishlist = () => {
                 </p>
               </div>
 
-              <button className="text-red-500">
+              <button
+                className="text-red-500"
+                onClick={() => toggleWishlist(item)}
+              >
                 ❤️
               </button>
 

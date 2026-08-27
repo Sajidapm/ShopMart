@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { WishlistContext } from "../Context/WishlistContext";
 import { CartContext } from "../Context/CartContext";
 import { CompareContext } from "../Context/CompareContext";
-const Product = ({ product }) => {
+const DealsComponent = ({ product }) => {
   const [liked, setLiked] = useState(false);
   const { toggleWishlist } = useContext(WishlistContext);
   const { cart, toggleCart } = useContext(CartContext);
@@ -18,6 +18,8 @@ const Product = ({ product }) => {
     toggleWishlist(product);
   };
   return (
+    <>   
+     {product.discountPercentage > 13 && (
     <div
       className="bg-white rounded-2xl shadow-md hover:shadow-xl
       transition duration-300 overflow-hidden border border-gray-100
@@ -32,7 +34,12 @@ const Product = ({ product }) => {
       />
 
       {/* Product Details */}
-      <div className="text-center mt-4">
+      <div className=" mt-4">
+     {/*Discount.............. */}
+        <div className="text-start w-fit border rounded-[4px] bg-red-500">
+        <span className="text-white  text-sm font-semibold">
+          {product.discountPercentage} % OFF </span>
+        </div>
 
         <h2 className="font-semibold text-lg line-clamp-2">
           {product.title}
@@ -52,12 +59,6 @@ const Product = ({ product }) => {
           <span className="text-lg font-bold text-blue-600">
             ${product.price}
           </span>
-     {/*Discount.............. */}
-        <div>
-        {product.discountPercentage > 0 && 
-        (<span className="text-green-600 text-sm font-semibold">
-          {product.discountPercentage} % OFF </span>)}
-        </div>
       </div>
         
               {/* Cart Button */}
@@ -121,7 +122,8 @@ const Product = ({ product }) => {
       </button>
 
     </div>
-  );
+    )}
+  </>);
 };
 
-export default Product;
+export default DealsComponent;

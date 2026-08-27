@@ -51,7 +51,7 @@ const ProductDetails = () => {
 
           {/* Product Image */}
           <div className="relative">
-
+             
             <img
               src={product.thumbnail}
               alt={product.title}
@@ -78,7 +78,6 @@ const ProductDetails = () => {
 
           {/* Product Details */}
           <div>
-
             <h1 className="text-3xl font-bold">
               {product.title}
             </h1>
@@ -94,6 +93,11 @@ const ProductDetails = () => {
             <p className="mt-3">
               ⭐ {product.rating}
             </p>
+              {/*Discount.............. */}
+        <div className="text-start w-fit border rounded-[4px] px-3 bg-red-500">
+        <span className="text-white  text-sm font-semibold">
+          {product.discountPercentage} % OFF </span>
+        </div>
 
             <p className="mt-5 text-gray-600">
               {product.description}

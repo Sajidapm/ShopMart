@@ -49,7 +49,7 @@ const linkStyle = ({ isActive }) =>
     <div className="ml-1">Cart</div>
   </div>
 </NavLink>
-        <NavLink to="/Account" className={linkStyle} >Account</NavLink>
+        <NavLink to="/AccountPage" className={linkStyle} >Account</NavLink>
       </div>
       </div>
     
@@ -63,15 +63,15 @@ const linkStyle = ({ isActive }) =>
         </NavLink>  
         
         <Categories/>
-        <NavLink to="Deals" className={linkStyle} ><div className='flex items-center ' > <Tag size={18} className='text-black' />
-        <div>Deals</div></div></NavLink>
+        <NavLink to="DealsPage" className={linkStyle} ><div className='flex items-center ' > <Tag size={18} className='text-black' />
+        <div>Today's Deals</div></div></NavLink>
         <NavLink to="Compare" className={linkStyle} ><div className='flex  items-center'> <GitCompare size={18} className='text-black' />
         <div>Compare</div></div></NavLink>
         <NavLink to="Productlist"className={linkStyle} ><div className='flex  items-center' > <Package  size={18} className='text-black' />
         <div>Products</div></div></NavLink>
         <NavLink to="Orders" className={linkStyle} ><div className='flex  items-center' > <ClipboardList size={18} className='text-black' />
         <div>Orders</div></div></NavLink>
-        <NavLink to="Help" className={linkStyle} ><div className='flex  items-center'> <CircleHelp size={18} className='text-black' />
+        <NavLink to="HelpPage" className={linkStyle} ><div className='flex  items-center'> <CircleHelp size={18} className='text-black' />
         <div>Help</div></div></NavLink>
         </div>
       
