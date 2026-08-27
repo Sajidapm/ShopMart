@@ -43,7 +43,7 @@ const SearchBar = () => {
           {filteredProducts.map((product) => (
             <NavLink
               key={product.id}
-              to={`/Product/${product.id}`}
+            to={`/ProductDetails/${product.id}`}
               onClick={() => setShowMenu(false)}
               className="flex items-center gap-3 p-2 hover:bg-gray-100"
             >
