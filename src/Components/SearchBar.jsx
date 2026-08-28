@@ -1,21 +1,18 @@
 import React, { useContext, useState } from "react";
 import { ProductContext } from "../Context/ProductContext";
 import { Search } from "lucide-react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
   const [showMenu, setShowMenu] = useState(false);
-  
-
   const products = useContext(ProductContext);
-
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative md:w-[300px] lg:w-[1000px] md:max-w-md ">
 
       <input
         type="text"
@@ -45,8 +42,7 @@ const SearchBar = () => {
               key={product.id}
             to={`/ProductDetails/${product.id}`}
               onClick={() => setShowMenu(false)}
-              className="flex items-center gap-3 p-2 hover:bg-gray-100"
-            >
+              className="flex items-center gap-3 p-2 hover:bg-gray-100" >
 
               <img
                 src={product.thumbnail}

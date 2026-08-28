@@ -94,7 +94,8 @@ const ProductDetails = () => {
               ⭐ {product.rating}
             </p>
               {/*Discount.............. */}
-        <div className="text-start w-fit border rounded-[4px] px-3 bg-red-500">
+        <div className="text-start w-fit border 
+         px-3 bg-red-500">
         <span className="text-white  text-sm font-semibold">
           {product.discountPercentage} % OFF </span>
         </div>
@@ -109,7 +110,7 @@ const ProductDetails = () => {
               {isInCart ? (
                 <NavLink
                   to="/Cart"
-                  className="block w-full mt-4 bg-green-600
+                  className="flex-1 mt-4 bg-green-600
                   text-white py-2 rounded-lg
                   text-center hover:bg-green-700"
                 >
@@ -129,7 +130,7 @@ const ProductDetails = () => {
               {isInCart && (
                 <button
                   onClick={() => toggleCart(product)}
-                  className="w-full mt-4 bg-red-600
+                  className="flex-1 mt-4 bg-red-600
                   text-white py-2 rounded-lg
                   hover:bg-red-700"
                 >

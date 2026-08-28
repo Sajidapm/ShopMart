@@ -6,13 +6,13 @@ const Hero = () => {
   const products = useContext(ProductContext);
 
   return (
-    <div>
+    <div className="pt-20 md:pt-2">
+
       {/* Hero Image */}
-      <NavLink to="/Productlist">
+      <NavLink to="/Productlist" className="pt-11" >
         <img
-          src="public/Hero.png"
-          className="md:h-125 w-full "
-          alt="Hero" 
+          src="\Hero.png"
+  className="w-full h-auto block"          alt="Hero" 
         />
       </NavLink>
 

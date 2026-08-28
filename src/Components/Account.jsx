@@ -6,7 +6,12 @@ const Account = () => {
   return (
     <div className="min-h-screen flex items-center justify-end lg:mr-24   px-4 py-10">
 
-      <div className="w-full max-w-md bg-white rounded-xl shadow-md p-8 border border-gray-200">
+      <div className="w-full max-w-md bg-white  rounded-xl shadow-md p-8 border border-gray-200">
+        {/*Logo name........ */}
+      <div className='flex items-center justify-center relative '> <span className='text-3xl font-bold'>Shop</span>
+      <span className='text-3xl text-blue-700 font-bold'>Smart</span>
+      </div>
+  
         <div className="text-center mb-7">
           <p className="text-gray-500 mt-2">
             {isLogin

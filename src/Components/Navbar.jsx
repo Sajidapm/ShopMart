@@ -3,16 +3,15 @@ import {NavLink} from 'react-router-dom'
 import  { useContext } from 'react'
 import { CartContext } from "../Context/CartContext";
 import  ProductContext  from '../Context/ProductContext'
-import { Search,House , 
-  Grid2X2, Tag, 
-  GitCompare, Heart, ShoppingCart,
+import { House , 
+   Tag, 
+  GitCompare,  ShoppingCart,
   ClipboardList,
   CircleHelp,
-  HelpCircle,
   Package,Sparkles,Sofa,SprayCan,ShoppingBasket} from "lucide-react";
 import Categories from './Categories';
-import MobileMenu from './MobilMenu';
-import SearchBar from './SearchBar';
+import MobileMenu from './MobilMenu'
+import SearchPage from '../SearchPage';
 
 const Navbar = () => {
 const { cart } = useContext(CartContext);
@@ -32,7 +31,7 @@ const linkStyle = ({ isActive }) =>
       </div>
       {/*Search bar ...........*/}
       
-     <SearchBar/>
+     <SearchPage/>
       {/*Nav menu............... */}
       <div className='flex gap-5 '>
         <NavLink to="/WishlistPage" className={linkStyle} >WishList</NavLink>
@@ -78,7 +77,7 @@ const linkStyle = ({ isActive }) =>
     </nav> 
 
    {/* Navbar in Mobile...............................................*/}
-    <nav className=' md:hidden pb-3 py-7 fixed top-0 left-0 w-full z-[9999]  bg-white '>
+    <nav className=' md:hidden p-8 py-7 fixed top-0 left-0 w-full z-[9999]  bg-white '>
       {/*Align Logo and Menu... */}
       <div className='flex   mr-5 justify-between'>
       {/*logo....... */}
@@ -110,19 +109,15 @@ const linkStyle = ({ isActive }) =>
       {/*Mobile screen search bar.... */}
     <div className="md:hidden  border border-gray-300 rounded-lg w-full my-3
   focus-within:border-blue-700 flex items-center">
-
-  
-
   <div className="flex-1 w-full">
-    <SearchBar />
+    <SearchPage />
   </div>
 
-</div>  <div className='flex justify-between px-2 border-y-2 border-gray-200'>
+</div>  <div className=' hidden md:flex justify-between px-2 border-y-2 border-gray-200'>
         
                     <NavLink
                       to="/Categoriespage/beauty"
                       className="py-2 block"
-                     
                     >
                   <Sparkles size={20} />
                   <span>Beauty</span>
@@ -131,10 +126,9 @@ const linkStyle = ({ isActive }) =>
                     <NavLink
                       to="/Categoriespage/fragrances"
                       className="py-2 block"
-                 
                     >
                      <SprayCan size={20} />
-<span>Fragrances</span>
+                   <span>Fragrances</span>
                     </NavLink>
         
                     <NavLink
