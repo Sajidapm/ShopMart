@@ -134,7 +134,7 @@ const ProductDetails = () => {
                   text-white py-2 rounded-lg
                   hover:bg-red-700"
                 >
-                Bye Now
+                Buy Now
                 </button>
               )}
 

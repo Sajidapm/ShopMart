@@ -87,7 +87,7 @@ const DealsComponent = ({ product }) => {
               className="w-full mt-4 bg-blue-600 text-white
               py-2 rounded-lg mx-2 hover:bg-blue-700"
             >
-             Bye Now 
+             Buy Now 
             </button>
           )}
 

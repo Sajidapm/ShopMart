@@ -113,7 +113,9 @@ const linkStyle = ({ isActive }) =>
     <SearchPage />
   </div>
 
-</div>  <div className=' hidden md:flex justify-between px-2 border-y-2 border-gray-200'>
+</div> 
+<div className='md:hidden'><Categories/> </div>
+ <div className=' hidden md:flex justify-between px-2 border-y-2 border-gray-200'>
         
                     <NavLink
                       to="/Categoriespage/beauty"
