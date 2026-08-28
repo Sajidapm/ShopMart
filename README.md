@@ -14,4 +14,4 @@
 - **Deployment:** Vercel
 
 ## Live Demo
-[ShopSmart](https://shop-mart-cyan.vercel.app/)    https://shop-mart-cyan.vercel.app/ 
+Deployment Link:   https://shop-mart-cyan.vercel.app/ 
