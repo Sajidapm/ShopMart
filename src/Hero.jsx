@@ -6,7 +6,7 @@ const Hero = () => {
   const products = useContext(ProductContext);
 
   return (
-    <div className="pt-20 md:pt-2">
+    <div className="pt-20 md:pt-2 px-2 md:px-0">
 
       {/* Hero Image */}
       <NavLink to="/Productlist" className="pt-11" >
