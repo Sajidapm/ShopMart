@@ -12,6 +12,4 @@
 - **Responsive Design:** Tailwind CSS responsive classes
 - **Version Control:** Git & GitHub
 - **Deployment:** Vercel
-
-## Live Demo
 Deployment Link:   https://shop-mart-cyan.vercel.app/ 
