@@ -1,4 +1,4 @@
-## Technical Details
+## Technical Details 
 
 - **Frontend:** React.js
 - **Build Tool:** Vite
@@ -14,5 +14,4 @@
 - **Deployment:** Vercel
 
 ## Live Demo
-
-[ShopSmart](https://shop-mart-cyan.vercel.app/)
+[ShopSmart](https://shop-mart-cyan.vercel.app/)    https://shop-mart-cyan.vercel.app/ 
