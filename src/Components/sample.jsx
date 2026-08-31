@@ -18,6 +18,7 @@ const Product = ({ product }) => {
     toggleWishlist(product);
   };
   return (
+    <div>
     <div
       className="bg-white rounded-2xl shadow-md hover:shadow-xl
       transition duration-300 overflow-hidden border border-gray-100
@@ -121,6 +122,11 @@ const Product = ({ product }) => {
       </button>
 
     </div>
+    <button className="border border-gray-400">
+        Compare
+    </button>
+
+</div>
   );
 };
 

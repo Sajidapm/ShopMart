@@ -64,7 +64,7 @@ const linkStyle = ({ isActive }) =>
         <Categories/>
         <NavLink to="DealsPage" className={linkStyle} ><div className='flex items-center ' > <Tag size={18} className='text-black' />
         <div>Today's Deals</div></div></NavLink>
-        <NavLink to="Compare" className={linkStyle} ><div className='flex  items-center'> <GitCompare size={18} className='text-black' />
+        <NavLink to="ComparePage" className={linkStyle} ><div className='flex  items-center'> <GitCompare size={18} className='text-black' />
         <div>Compare</div></div></NavLink>
         <NavLink to="Productlist"className={linkStyle} ><div className='flex  items-center' > <Package  size={18} className='text-black' />
         <div>Products</div></div></NavLink>

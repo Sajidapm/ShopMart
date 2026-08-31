@@ -140,20 +140,7 @@ const ProductDetails = () => {
 
             </div>
 
-            {/* Compare Button */}
-            <button
-              onClick={() => toggleCompare(product)}
-              className={`w-full mt-2 py-2 rounded-lg ${
-                isInCompare
-                  ? "bg-purple-600 text-white hover:bg-purple-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              {isInCompare
-                ? "Remove Compare"
-                : "Compare"}
-            </button>
-
+         
           </div>
 
         </div>
