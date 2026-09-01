@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 const Account = () => {
   const [isLogin, setIsLogin] = useState(true);
 
-  // Login validation
+
   const loginSchema = yup.object({
     email: yup
       .string()
@@ -64,16 +64,16 @@ const Account = () => {
 
   return (
     <>
-      {/* Existing Navbar */}
+      
       <Navbar />
 
-      {/* Account Page */}
+    
       <div
         className="min-h-screen flex justify-end items-start
         pt-[180px] pr-[11%] bg-white"
       >
 
-        {/* Account Card */}
+
         <div
           className="w-[450px]
           bg-white
@@ -161,7 +161,7 @@ const Account = () => {
 
             </div>
 
-            {/* Password */}
+      
             <div className="mb-5">
 
               <label className="block text-sm font-semibold mb-2">
@@ -223,7 +223,7 @@ const Account = () => {
               </div>
             )}
 
-            {/* Submit Button */}
+        
             <button
               type="submit"
               className="w-full h-[49px]
