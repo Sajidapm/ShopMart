@@ -70,7 +70,7 @@ const Account = () => {
     
       <div
         className="min-h-screen flex justify-end items-start
-        pt-[180px] pr-[11%] bg-white"
+        pt-[100px] pr-[11%] bg-white"
       >
 
 
