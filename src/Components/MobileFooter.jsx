@@ -25,7 +25,7 @@ const MobileFooter = () => {
         <NavLink to="/Orders"><div className='flex flex-col items-center'>
             <ClipboardList size={24} /><div>Orders</div></div></NavLink>
 
-        <NavLink to="/Account"><div className='flex flex-col items-center'> 
+        <NavLink to="/AccountPage"><div className='flex flex-col items-center'> 
              <UserRound /><div>Account</div></div></NavLink>
       </div>
       </footer>
