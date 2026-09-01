@@ -49,7 +49,7 @@ const MobileMenu = () => {
             </div>
           </NavLink>
 
-          <NavLink to="Compare"               onClick={() => setShowMenu(false)}
+          <NavLink to="ComparePage"               onClick={() => setShowMenu(false)}
 >
             <div className="flex items-center gap-2 py-2">
               <GitCompare size={18} />
