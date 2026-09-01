@@ -1,93 +1,282 @@
 import React, { useState } from "react";
+import Navbar from "./Navbar";
+
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const Account = () => {
   const [isLogin, setIsLogin] = useState(true);
 
-  return (
-    <div className="min-h-screen flex items-center justify-end lg:mr-24   px-4 py-10">
+  // Login validation
+  const loginSchema = yup.object({
+    email: yup
+      .string()
+      .email("Enter a valid email")
+      .required("Email is required"),
 
-      <div className="w-full max-w-md bg-white  rounded-xl shadow-md p-8 border border-gray-200">
-        {/*Logo name........ */}
-      <div className='flex items-center justify-center relative '> <span className='text-3xl font-bold'>Shop</span>
-      <span className='text-3xl text-blue-700 font-bold'>Smart</span>
-      </div>
-  
-        <div className="text-center mb-7">
-          <p className="text-gray-500 mt-2">
+    password: yup
+      .string()
+      .required("Password is required"),
+  });
+
+  // Signup validation
+  const signupSchema = yup.object({
+    username: yup
+      .string()
+      .required("Username is required"),
+
+    email: yup
+      .string()
+      .email("Enter a valid email")
+      .required("Email is required"),
+
+    password: yup
+      .string()
+      .min(6, "Minimum 6 characters")
+      .required("Password is required"),
+
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password")], "Passwords must match")
+      .required("Confirm password is required"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(
+      isLogin ? loginSchema : signupSchema
+    ),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  const switchForm = () => {
+    setIsLogin(!isLogin);
+    reset();
+  };
+
+  return (
+    <>
+      {/* Existing Navbar */}
+      <Navbar />
+
+      {/* Account Page */}
+      <div
+        className="min-h-screen flex justify-end items-start
+        pt-[180px] pr-[11%] bg-white"
+      >
+
+        {/* Account Card */}
+        <div
+          className="w-[450px]
+          bg-white
+          border border-gray-200
+          rounded-xl
+          shadow-md
+          p-8"
+        >
+
+          {/* ShopSmart Logo */}
+          <h1 className="text-3xl font-bold text-center mb-2">
+            <span className="text-black">Shop</span>
+            <span className="text-blue-600">Smart</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-center text-gray-500 mb-8">
             {isLogin
               ? "Login to your ShopSmart account"
-              : "Sign up to start shopping"}
+              : "Create your ShopSmart account"}
           </p>
-        </div>
 
-        {/* Name */}
-        {!isLogin && (
-          <div className="mb-4">
-            <label className="flex text-sm font-medium text-gray-700 mb-2">
-              Name
-            </label>
+          {/* Form */}
+          <form onSubmit={handleSubmit(onSubmit)}>
 
-            <input
-              type="text"
-              placeholder="Enter your name"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
-            />
-          </div>
-        )}
+            {/* Username - Signup only */}
+            {!isLogin && (
+              <div className="mb-4">
 
-        {/* Email */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Email
-          </label>
+                <label className="block text-sm font-semibold mb-2">
+                  Username
+                </label>
 
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
-          />
-        </div>
+                <input
+                  type="text"
+                  placeholder="Enter your username"
+                  {...register("username")}
+                  className="w-full h-[51px]
+                  px-4
+                  rounded-lg
+                  border border-gray-300
+                  bg-blue-50
+                  outline-none
+                  focus:border-blue-500
+                  focus:ring-1
+                  focus:ring-blue-500"
+                />
 
-        {/* Password */}
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Password
-          </label>
+                {errors.username && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.username.message}
+                  </p>
+                )}
 
-          <input
-            type="password"
-            placeholder="Enter your password"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
-          />
-        </div>
+              </div>
+            )}
 
-        {/* Button */}
-        <button
-          type="button"
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-        >
-          {isLogin ? "Login" : "Sign Up"}
-        </button>
+            {/* Email */}
+            <div className="mb-5">
 
-        {/* Switch Login / Signup */}
-        <div className="text-center mt-6">
-          <p className="text-gray-500">
-            {isLogin
-              ? "Don't have an account?"
-              : "Already have an account?"}
+              <label className="block text-sm font-semibold mb-2">
+                Email
+              </label>
 
+              <input
+                type="email"
+                placeholder="Enter your email"
+                {...register("email")}
+                className="w-full h-[51px]
+                px-4
+                rounded-lg
+                border border-gray-300
+                bg-blue-50
+                outline-none
+                focus:border-blue-500
+                focus:ring-1
+                focus:ring-blue-500"
+              />
+
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.email.message}
+                </p>
+              )}
+
+            </div>
+
+            {/* Password */}
+            <div className="mb-5">
+
+              <label className="block text-sm font-semibold mb-2">
+                Password
+              </label>
+
+              <input
+                type="password"
+                placeholder="Enter your password"
+                {...register("password")}
+                className="w-full h-[51px]
+                px-4
+                rounded-lg
+                border border-gray-300
+                bg-blue-50
+                outline-none
+                focus:border-blue-500
+                focus:ring-1
+                focus:ring-blue-500"
+              />
+
+              {errors.password && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.password.message}
+                </p>
+              )}
+
+            </div>
+
+            {/* Confirm Password - Signup only */}
+            {!isLogin && (
+              <div className="mb-6">
+
+                <label className="block text-sm font-semibold mb-2">
+                  Confirm Password
+                </label>
+
+                <input
+                  type="password"
+                  placeholder="Confirm your password"
+                  {...register("confirmPassword")}
+                  className="w-full h-[51px]
+                  px-4
+                  rounded-lg
+                  border border-gray-300
+                  bg-blue-50
+                  outline-none
+                  focus:border-blue-500
+                  focus:ring-1
+                  focus:ring-blue-500"
+                />
+
+                {errors.confirmPassword && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.confirmPassword.message}
+                  </p>
+                )}
+
+              </div>
+            )}
+
+            {/* Submit Button */}
             <button
-              type="button"
-              onClick={() => setIsLogin(!isLogin)}
-              className="ml-2 text-blue-600 font-semibold hover:underline"
+              type="submit"
+              className="w-full h-[49px]
+              bg-blue-600
+              text-white
+              font-semibold
+              rounded-lg
+              hover:bg-blue-700
+              transition"
             >
-              {isLogin ? "Sign Up" : "Login"}
+              {isLogin ? "Login" : "Sign Up"}
             </button>
-          </p>
-        </div>
 
+          </form>
+
+          {/* Switch */}
+          <p className="text-center text-gray-500 mt-7">
+
+            {isLogin ? (
+              <>
+                Don't have an account?{" "}
+
+                <button
+                  type="button"
+                  onClick={switchForm}
+                  className="text-blue-600
+                  font-semibold
+                  hover:underline"
+                >
+                  Sign Up
+                </button>
+              </>
+            ) : (
+              <>
+                Already have an account?{" "}
+
+                <button
+                  type="button"
+                  onClick={switchForm}
+                  className="text-blue-600
+                  font-semibold
+                  hover:underline"
+                >
+                  Login
+                </button>
+              </>
+            )}
+
+          </p>
+
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
