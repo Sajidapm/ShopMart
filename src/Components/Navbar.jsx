@@ -88,7 +88,7 @@ const linkStyle = ({ isActive }) =>
       {/*Nav menu ..... */}
        <div className='flex  gap-2'>
          <NavLink to="/WishlistPage">❤ </NavLink>
-         <NavLink to="/Account">Login</NavLink>
+         <NavLink to="/AccountPage">Login</NavLink>
          <NavLink to="/Cart">
       <div className="relative flex items-center ">
       <ShoppingCart size={24} />
