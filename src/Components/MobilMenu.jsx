@@ -41,7 +41,7 @@ const MobileMenu = () => {
             </div>
           </NavLink>
 
-          <NavLink to="Deals"               onClick={() => setShowMenu(false)}
+          <NavLink to="DealsPage"               onClick={() => setShowMenu(false)}
 >
             <div className="flex items-center gap-2 py-2">
               <Tag size={18} />
