@@ -45,7 +45,7 @@ const MobileMenu = () => {
 >
             <div className="flex items-center gap-2 py-2">
               <Tag size={18} />
-              <span>Deals</span>
+              <span>Today's Deals</span>
             </div>
           </NavLink>
 
