@@ -5,26 +5,26 @@ const Wishlist = () => {
   const { wishlist, toggleWishlist } = useContext(WishlistContext);
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-5">
+    <div className="flex  md:flex-row gap-6 ">
 
       {/* Sidebar */}
-      <div className="w-full md:w-80 h-lvh border border-gray-200 rounded-lg p-5">
-        <aside>
-          <div className="items-center gap-3">
-            <div className="border rounded-full bg-blue-300 w-12 flex items-center justify-center">
+      <div className="hidden md:flex md:w-64  h-lvh border border-gray-200 rounded-lg p-5">
+        <aside className=" pt-5 w-full">
+          <div className="flex flex-col items-center w-full justify-start gap-3">
+            <div className="border rounded-full bg-blue-300 w-14 h-14 flex items-center justify-center">
               s
             </div>
 
             <div>
-              <p>sssssss</p>
+              <p>Sajida</p>
             </div>
           </div>
         </aside>
       </div>
 
       {/* Wishlist Products */}
-      <div className="flex-1">
-        <div className="grid grid-cols-1 gap-5">
+      <div className="flex-1 ">
+        <div className="grid pt-24 md:pt-3 grid-cols-1 gap-5">
 
           {wishlist.map((item) => (
             <div
