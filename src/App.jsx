@@ -14,6 +14,10 @@ import ProductDetailsPage from './ProductDetailsPage'
 import DealsPage from './DealsPage'
 import HelpPage from './HelpPage'
 import AccountPage from './AccountPage'
+import Dashboard from './Dashboard'
+import AddProduct from './Components/AddProduct'
+
+import { DateSchema } from 'yup'
 
 const App = () => {
   return (
@@ -24,10 +28,7 @@ const App = () => {
         <Route path="Cart" element={<Cart />} />
         <Route path="ComparePage" element={<ComparePage />} />
         <Route path='AccountPage' element={<AccountPage/>}/>
- <Route
-          path="Categoriespage/:category"
-          element={<Categoriespage />}
-        />  
+        <Route path="Categoriespage/:category" element={<Categoriespage />}/>  
         <Route path='SearchPage' element={<SearchPage/>}/>
         <Route path='DealsPage' element={<DealsPage/>}/>
         <Route path="Productlist" element={<Productlist />} />
@@ -36,6 +37,9 @@ const App = () => {
         <Route path='/HelpPage' element={<HelpPage/>}/>
 
    </Route>
+<Route path="/Dashboard" element={<Dashboard />}>
+  <Route path="addProduct" element={<AddProduct />} />
+</Route>
  </Routes>
   )
 }

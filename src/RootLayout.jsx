@@ -14,6 +14,7 @@ const RootLayout = () => {
         <main className='pt-20'>
         <Outlet />
         </main>
+      
         <Footer />
       </div>
 

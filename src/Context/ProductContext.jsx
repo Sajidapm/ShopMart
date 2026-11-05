@@ -8,7 +8,7 @@ const  ProductContextProvider= ({children})=>{
         useEffect(()=>{
             async function fetchData() {
         try{
-                const response = await axios.get("https://dummyjson.com/products")
+                const response = await axios.get("https://")
                setProducts(response.data.products);
                console.log(response)
                     }catch (error){console.log(error)}

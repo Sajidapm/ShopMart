@@ -1,14 +1,19 @@
+
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const Account = () => {
+
   const [isLogin, setIsLogin] = useState(true);
 
+  const navigate = useNavigate();
 
+  // Login validation
   const loginSchema = yup.object({
     email: yup
       .string()
@@ -53,8 +58,58 @@ const Account = () => {
     ),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  // Submit
+  const onSubmit = async (data) => {
+    try {
+
+      if (isLogin) {
+
+        const response = await axios.post(
+          "http://localhost:3000/api/auth/login",
+          {
+            email: data.email,
+            password: data.password,
+          }
+        );
+
+        alert(response.data.message);
+
+        const user = response.data.user;
+
+        if (user.role === "admin") {
+          navigate("/dashboard");
+        } else {
+          navigate("/");
+        }
+
+      } else {
+
+        const response = await axios.post(
+          "http://localhost:3000/api/auth/register",
+          {
+            name: data.username,
+            email: data.email,
+            password: data.password,
+          }
+        );
+
+        alert(response.data.message);
+
+        setIsLogin(true);
+        reset();
+      }
+
+    } catch (error) {
+
+      console.log("Error:", error);
+      console.log("Backend response:", error.response?.data);
+
+      alert(
+        error.response?.data?.message ||
+        error.message ||
+        "Something went wrong"
+      );
+    }
   };
 
   const switchForm = () => {
@@ -64,24 +119,11 @@ const Account = () => {
 
   return (
     <>
-      
       <Navbar />
 
-    
-      <div
-        className="min-h-screen flex justify-end items-start
-        pt-[100px] pr-[11%] bg-white"
-      >
+      <div className="min-h-screen flex justify-end items-start pt-[100px] pr-[11%] bg-white">
 
-
-        <div
-          className="w-[450px]
-          bg-white
-          border border-gray-200
-          rounded-xl
-          shadow-md
-          p-8"
-        >
+        <div className="w-[450px] bg-white border border-gray-200 rounded-xl shadow-md p-8">
 
           {/* ShopSmart Logo */}
           <h1 className="text-3xl font-bold text-center mb-2">
@@ -111,15 +153,7 @@ const Account = () => {
                   type="text"
                   placeholder="Enter your username"
                   {...register("username")}
-                  className="w-full h-[51px]
-                  px-4
-                  rounded-lg
-                  border border-gray-300
-                  bg-blue-50
-                  outline-none
-                  focus:border-blue-500
-                  focus:ring-1
-                  focus:ring-blue-500"
+                  className="w-full h-[51px] px-4 rounded-lg border border-gray-300 bg-blue-50 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 />
 
                 {errors.username && (
@@ -142,15 +176,7 @@ const Account = () => {
                 type="email"
                 placeholder="Enter your email"
                 {...register("email")}
-                className="w-full h-[51px]
-                px-4
-                rounded-lg
-                border border-gray-300
-                bg-blue-50
-                outline-none
-                focus:border-blue-500
-                focus:ring-1
-                focus:ring-blue-500"
+                className="w-full h-[51px] px-4 rounded-lg border border-gray-300 bg-blue-50 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
               />
 
               {errors.email && (
@@ -161,7 +187,7 @@ const Account = () => {
 
             </div>
 
-      
+            {/* Password */}
             <div className="mb-5">
 
               <label className="block text-sm font-semibold mb-2">
@@ -172,15 +198,7 @@ const Account = () => {
                 type="password"
                 placeholder="Enter your password"
                 {...register("password")}
-                className="w-full h-[51px]
-                px-4
-                rounded-lg
-                border border-gray-300
-                bg-blue-50
-                outline-none
-                focus:border-blue-500
-                focus:ring-1
-                focus:ring-blue-500"
+                className="w-full h-[51px] px-4 rounded-lg border border-gray-300 bg-blue-50 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
               />
 
               {errors.password && (
@@ -203,15 +221,7 @@ const Account = () => {
                   type="password"
                   placeholder="Confirm your password"
                   {...register("confirmPassword")}
-                  className="w-full h-[51px]
-                  px-4
-                  rounded-lg
-                  border border-gray-300
-                  bg-blue-50
-                  outline-none
-                  focus:border-blue-500
-                  focus:ring-1
-                  focus:ring-blue-500"
+                  className="w-full h-[51px] px-4 rounded-lg border border-gray-300 bg-blue-50 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 />
 
                 {errors.confirmPassword && (
@@ -223,16 +233,10 @@ const Account = () => {
               </div>
             )}
 
-        
+            {/* Submit Button */}
             <button
               type="submit"
-              className="w-full h-[49px]
-              bg-blue-600
-              text-white
-              font-semibold
-              rounded-lg
-              hover:bg-blue-700
-              transition"
+              className="w-full h-[49px] bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-900 transition"
             >
               {isLogin ? "Login" : "Sign Up"}
             </button>
@@ -249,9 +253,7 @@ const Account = () => {
                 <button
                   type="button"
                   onClick={switchForm}
-                  className="text-blue-600
-                  font-semibold
-                  hover:underline"
+                  className="text-blue-600 font-semibold hover:underline"
                 >
                   Sign Up
                 </button>
@@ -263,9 +265,7 @@ const Account = () => {
                 <button
                   type="button"
                   onClick={switchForm}
-                  className="text-blue-600
-                  font-semibold
-                  hover:underline"
+                  className="text-blue-600 font-semibold hover:underline"
                 >
                   Login
                 </button>
