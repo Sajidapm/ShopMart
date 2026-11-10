@@ -15,7 +15,7 @@ import DealsPage from './DealsPage'
 import HelpPage from './HelpPage'
 import AccountPage from './AccountPage'
 import Dashboard from './Dashboard'
-import AddProduct from './Components/AddProduct'
+import AddProductPage from './AddProductPage'
 
 import { DateSchema } from 'yup'
 
@@ -37,8 +37,8 @@ const App = () => {
         <Route path='/HelpPage' element={<HelpPage/>}/>
 
    </Route>
-<Route path="/Dashboard" element={<Dashboard />}>
-  <Route path="addProduct" element={<AddProduct />} />
+<Route path="Dashboard" element={<Dashboard />}>
+  <Route path="AddProductPage" element={<AddProductPage />} />
 </Route>
  </Routes>
   )
